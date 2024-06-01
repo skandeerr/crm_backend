@@ -1,0 +1,49 @@
+package com.project.crm.web.common;
+
+public class ApiMessage {
+    public static final String INVALID_INPUT = "INVALID_INPUT";
+
+    public static final String NOT_FOUND = "NOT_FOUND";
+
+    public static final String SUCCESSFUL_OPERATION = "SUCCESSFUL_OPERATION";
+    public static final String NO_DATA = "NO_DATA";
+    public static final String OAUTH2SCHEMA = "oauth2schema";
+    public static final String CONTACT_CREATED_SUCCESSFULLY = "CONTACT_CREATED_SUCCESSFULLY";
+    public static final String TASK_CREATED_SUCCESSFULLY = "TASK_CREATED_SUCCESSFULLY";
+
+    public static final String ROLE_CREATED_SUCCESSFULLY = "ROLE_CREATED_SUCCESSFULLY";
+    public static final String PERMISSION_CREATED_SUCCESSFULLY = "PERMISSION_CREATED_SUCCESSFULLY";
+
+
+    public static final String PROSPECTS_CREATED_SUCCESSFULLY = "PROSPECTS_CREATED_SUCCESSFULLY";
+
+    public static final String CONTACT_UPDATED_SUCCESSFULLY = "CONTACT_UPDATED_SUCCESSFULLY";
+    public static final String TASK_UPDATED_SUCCESSFULLY = "TASK_UPDATED_SUCCESSFULLY";
+    public static final String ROLE_UPDATED_SUCCESSFULLY = "ROLE_UPDATED_SUCCESSFULLY";
+    public static final String PERMISSION_UPDATED_SUCCESSFULLY = "PERMISSION_UPDATED_SUCCESSFULLY";
+
+    public static final String NOTIFICATION_UPDATED_SUCCESSFULLY = "NOTIFICATION_UPDATED_SUCCESSFULLY";
+
+
+    public static final String PROSPECTS_UPDATED_SUCCESSFULLY = "PROSPECTS_UPDATED_SUCCESSFULLY";
+
+    public static final String CONTACT_DELETED_SUCCESSFULLY = "CONTACT_DELETED_SUCCESSFULLY";
+    public static final String TASK_DELETED_SUCCESSFULLY = "TASK_DELETED_SUCCESSFULLY";
+
+    public static final String ROLE_DELETED_SUCCESSFULLY = "ROLE_DELETED_SUCCESSFULLY";
+    public static final String PERMISSION_DELETED_SUCCESSFULLY = "PERMISSION_DELETED_SUCCESSFULLY";
+
+
+    public static final String PROSPECTS_DELETED_SUCCESSFULLY = "PROSPECTS_DELETED_SUCCESSFULLY";
+
+    public static final String SERVER_ERROR_OCCURRED = "SERVER_ERROR_OCCURRED";
+    public static final String ERROR_DELETE_CONTACT = "ERROR_DELETE_CONTACT";
+
+    public static final String CONTACT_ALREADY_EXIST = "CONTACT_ALREADY_EXIST";
+    public static final String TASK_ALREADY_EXIST = "TASK_ALREADY_EXIST";
+
+    public static final String REQUIRED_VALIDATION_FAILED = "REQUIRED_VALIDATION_FAILED";
+
+
+    public static final String ERROR_LEVEL_MESSAGE = "ERROR_LEVEL_MESSAGE" ;
+}

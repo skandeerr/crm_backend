@@ -19,6 +19,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -53,13 +54,12 @@ public class AuthApi {
         List<String> roles = userDetails.getAuthorities().stream()
                 .map(item -> item.getAuthority())
                 .collect(Collectors.toList());
-
+        Optional<User> user = userRepository.findById(userDetails.getId());
         return ResponseEntity.ok(new JwtResponse(jwt,
                 userDetails.getId(),
                 userDetails.getUsername(),
                 userDetails.getEmail(),
-
-                roles));
+                user.get().getRole()));
     }
 
     @PostMapping("/signup")
@@ -84,7 +84,7 @@ public class AuthApi {
       //  Set<String> strRoles = signUpRequest.getRole();
 
 
-        user.setRole("ADMIN");
+        user.setRole(signUpRequest.getRole());
         userRepository.save(user);
 
         return ResponseEntity.ok(new MessageResponse("User registered successfully!"));

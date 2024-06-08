@@ -13,4 +13,7 @@ public class RoleDto {
     private Long id;
     @Size(max=50)
     private String name;
+
+    @Size(max=50)
+    private String feature;
 }

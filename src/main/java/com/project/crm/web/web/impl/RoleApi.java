@@ -116,6 +116,7 @@ public class RoleApi implements IRoleApi {
                 Optional<Role> role = roleService.findById(roleId);
                 if (role.isPresent()) {
                     role.get().setName(roleCreateDto.getName());
+                    role.get().setFeature(roleCreateDto.getFeature());
                     roleService.update(role.get());
                     httpResponseBody = RoleMapper.MAPPER.toRoleDto(role.get());
                     httpStatus = HttpStatus.OK;

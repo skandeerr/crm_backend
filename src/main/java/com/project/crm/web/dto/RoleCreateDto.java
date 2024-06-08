@@ -11,4 +11,6 @@ import javax.validation.constraints.Size;
 public class RoleCreateDto {
     @Size(max=50)
     private String name;
+    @Size(max=50)
+    private String feature;
 }

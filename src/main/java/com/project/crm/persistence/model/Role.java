@@ -22,7 +22,8 @@ public class Role extends TimestampEntity implements Serializable {
     private Long id;
     @Column(name = "name")
     private String name;
-
+    @Column(name = "feature")
+    private String feature;
     @ManyToMany(mappedBy= "roles")
     private List<Permission> offres = new ArrayList<>();
 

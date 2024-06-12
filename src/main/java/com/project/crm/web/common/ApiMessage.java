@@ -9,6 +9,8 @@ public class ApiMessage {
     public static final String NO_DATA = "NO_DATA";
     public static final String OAUTH2SCHEMA = "oauth2schema";
     public static final String CONTACT_CREATED_SUCCESSFULLY = "CONTACT_CREATED_SUCCESSFULLY";
+    public static final String ENVOYER_MAIL_SUCCESSFULLY = "ENVOYER_MAIL_SUCCESSFULLY";
+
     public static final String TASK_CREATED_SUCCESSFULLY = "TASK_CREATED_SUCCESSFULLY";
 
     public static final String ROLE_CREATED_SUCCESSFULLY = "ROLE_CREATED_SUCCESSFULLY";

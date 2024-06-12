@@ -11,5 +11,12 @@ import org.mapstruct.factory.Mappers;
 public interface NotificationMapper {
     NotificationMapper MAPPER = Mappers.getMapper(NotificationMapper.class);
 
+/*
     NotificationDto toNotificationDto(Notification notification);
+*/
+
+    default NotificationDto toNotificationDto(Notification notification){
+       return NotificationDto.builder().NomTache(notification.getNomTache()).isViewd(notification.getIsViewd()).dateDebut(notification.getDateDebut())
+                .dateFin(notification.getDateFin()).taskId(notification.getTaskId()).id(notification.getId()).build();
+    }
 }

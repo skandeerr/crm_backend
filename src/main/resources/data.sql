@@ -16,5 +16,5 @@ INSERT IGNORE INTO `t_role`(`id`, `creation_date`, `update_date`, `name`,`featur
 
 
 INSERT IGNORE INTO `t_permission`(`id`, `name`) VALUES
-(1, 'Commercial'),
-(2, 'marketing');
+(1, 'Responsable de Commercial'),
+(2, 'Responsable de Marketing');

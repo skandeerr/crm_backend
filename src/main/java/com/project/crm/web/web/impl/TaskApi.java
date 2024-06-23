@@ -199,7 +199,11 @@ public class TaskApi implements ITasksApi {
             notification.get().setDateDebut(tasks.getDateDebut());
             notification.get().setNomTache(tasks.getName());
             notificationService.update(notification.get());
+            if(taskCreateDto.getStatusTask().equals("FAIT")){
+                notificationService.delete(notification.get());
+            }
         }
+
         httpResponseBody = TasksMapper.MAPPER.toTasksDto(tasks);
         httpStatus = HttpStatus.OK;
     }

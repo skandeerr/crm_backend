@@ -111,11 +111,6 @@ public class TaskApi implements ITasksApi {
         log.info("Web service saveTask is invoked with args taskCreateDto {}", taskCreateDto);
         if (!bindingResult.hasFieldErrors()) {
             try {
-                Optional<Tasks> task = taskService.findByName(taskCreateDto.getName());
-                if (!task.isEmpty()) {
-                    httpStatus = HttpStatus.BAD_REQUEST;
-                    httpResponseBody = new HttpErrorResponse(400, ApiMessage.TASK_ALREADY_EXIST);
-                } else {
                     Tasks newTasks = TasksMapper.MAPPER.toTasks(taskCreateDto);
                     Tasks taskToBeSave =taskService.save(newTasks);
                     Notification notification = new Notification();
@@ -127,7 +122,6 @@ public class TaskApi implements ITasksApi {
                     notificationService.save(notification);
                     httpResponseBody = TasksMapper.MAPPER.toTasksDto(taskToBeSave);
                     httpStatus = HttpStatus.OK;
-                }
             } catch (Exception ex) {
                 httpResponseBody = new HttpErrorResponse(500, SERVER_ERROR_OCCURRED);
                 httpStatus = HttpStatus.INTERNAL_SERVER_ERROR;
@@ -173,6 +167,10 @@ public class TaskApi implements ITasksApi {
             if (task.isPresent()) {
 
                 taskService.delete(task.get());
+                Optional<Notification> notification = notificationService.findByTaskId(taskId);
+                if(notification.isPresent()){
+                    notificationService.delete(notification.get());
+                }
                 httpResponseBody = new HttpMessageResponse(ApiMessage.TASK_DELETED_SUCCESSFULLY);
                 httpStatus = HttpStatus.OK;
             } else {
